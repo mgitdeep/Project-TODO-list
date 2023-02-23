@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const name = "Mondeep";
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,7 +19,16 @@ function App() {
         >
           Learn React
         </a>
+        <p>Mondeep Codes</p>
+        {/* <p>{"mgitdeep"}</p>
+        <p>{[ 1, 2, 3 ]}</p> */}
+
+        {/* <p>{{ name: 'obj', num: 3 }}</p>
+        <p>{{ a: 1, b: 2 }}</p> */}
+
+        <p>{name}</p>
       </header>
+      {/* <p>HTML</p> */}
     </div>
   );
 }
