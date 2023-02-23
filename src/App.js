@@ -9,11 +9,11 @@ function App() {
   return (
     <div className="App">
       
-        <Header />
+        <Header></Header>
         {/* <header></header>                 Don't put this small header, put this Header with H in caps*/}
-        <Content />
+        <Content></Content>
 
-        <Footer />
+        <Footer></Footer>
 
     </div>
   );
