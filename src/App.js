@@ -6,15 +6,20 @@ function App() {
   // const name = "Mondeep";
 
   return (
-    <div className="App">
+    // <div className="App">
       
-        <Header></Header>
-        {/* <header></header>                 Don't put this small header, put this Header with H in caps*/}
-        <Content></Content>
+    //     <Header></Header>
+    //     {/* <header></header>                 Don't put this small header, put this Header with H in caps*/}
+    //     <Content></Content>
 
-        <Footer></Footer>
+    //     <Footer></Footer>
 
-    </div>
+    // </div>
+    <>
+      <Content name="Yoshita" />
+      <Content name="Aparajita" />
+    </>
+    
   );
 }
 
