@@ -1,10 +1,17 @@
 import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
+import React, { useState } from 'react';
 
 function App() {
-  // const name = "Mondeep";
+  // let x = 10;
+  const [x, setCounter] = useState(0)
+  function updateState() {
+    setCounter(x+1)
+    console.log(x)
+  }
 
+  console.log(x)
   return (
     // <div className="App">
       
@@ -16,8 +23,10 @@ function App() {
 
     // </div>
     <>
-      <Content name="Yoshita" />
-      <Content name="Aparajita" />
+      {/* <Content name="Yoshita" />
+      <Content name="Aparajita" /> */}
+      <h1>Learning State {x}</h1>
+      <button onClick={updateState}>Click Me</button>
     </>
     
   );

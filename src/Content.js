@@ -49,7 +49,7 @@ import { FaTrashAlt } from 'react-icons/fa'
 
 function Content(props){
   console.log(props)
-  return <h1>Hello {props.name}</h1>
+  return <h1>Hello {props.name}!</h1>
 }
 
 export default Content;
