@@ -1,13 +1,18 @@
 import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
   // let x = 10;
-  const [x, setCounter] = useState(0)
+  const [x, y] = useState(0)
+
+  useEffect( () => {
+    console.log("Component mounted!")
+  })
+
   function updateState() {
-    setCounter(x+1)
+    y(x+1)
     console.log(x)
   }
 
