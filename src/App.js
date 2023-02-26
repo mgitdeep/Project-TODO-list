@@ -5,19 +5,23 @@ import React, { useState, useEffect } from 'react';
 
 function App() {
   // let x = 10;
-  const [x, y] = useState(0)
-  
+  const [counter, setCounter] = useState(0)
+  const [ data, setData] = useState("Ram")
 
   useEffect( () => {
     console.log("Component mounted!")
-  }, [])
+  }, [counter])
 
   function updateState() {
-    y(x+1)
-    console.log(x)
+    setCounter(counter+1)
+    console.log(counter)
   }
 
-  console.log(x)
+  function updateData() {
+    setData("Seeta")
+  }
+
+  console.log(counter)
   return (
     // <div className="App">
       
@@ -31,8 +35,10 @@ function App() {
     <>
       {/* <Content name="Yoshita" />
       <Content name="Aparajita" /> */}
-      <h1>Learning State {x}</h1>
-      <button onClick={updateState}>Click Me</button>
+      <h1>Learning State {counter}</h1>
+      <h1>Updating Data to {data}</h1>
+      <button onClick={updateState}>Click Me</button> <br />
+      <button onClick={updateData}>Update Data</button>
     </>
     
   );
