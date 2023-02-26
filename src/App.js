@@ -6,10 +6,11 @@ import React, { useState, useEffect } from 'react';
 function App() {
   // let x = 10;
   const [x, y] = useState(0)
+  
 
   useEffect( () => {
     console.log("Component mounted!")
-  })
+  }, [])
 
   function updateState() {
     y(x+1)
