@@ -1,3 +1,4 @@
+import logo512 from './logo512.png'
 import React, { useState } from 'react';
 import { FaTrashAlt } from 'react-icons/fa'
 
@@ -56,8 +57,13 @@ function formatName(firstname, surname) {
   return firstname + " " + surname;
 }
 
+function logo(props) {
+  const glogo = <img src={logo512}/>
+  return glogo
+}
+
 // export default Content;
-export {formatName}
+export {formatName, logo}
 
 
 

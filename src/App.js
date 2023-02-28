@@ -1,5 +1,5 @@
 import Header from './Header';
-import Content, { formatName } from './Content';
+import Content, { formatName, logo } from './Content';
 import Footer from './Footer';
 import React, { useState, useEffect } from 'react';
 
@@ -45,6 +45,7 @@ function App() {
       {/* <Content name="Krishna" color="blue"/> */}
       {/* <p>{formatName("Krishna", "Arjun")}</p> */}
       {result}
+      <logo />
     </>
     
   );
