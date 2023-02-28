@@ -1,13 +1,10 @@
 import cnm from './cnm.png';
 import Header from './Header';
-import Content, { formatName } from './Content';
+import Content, { formatName, Logo } from './Content';
 import Footer from './Footer';
 import React, { useState, useEffect } from 'react';
 
-function Logo(props) {
-  const gLogo = <img src={cnm} />;
-  return gLogo;
-}
+
 
 function App() {
   // let x = 10;
