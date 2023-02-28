@@ -47,12 +47,17 @@ import { FaTrashAlt } from 'react-icons/fa'
   // )
 // }
 
-function Content(props){
-  console.log(props)
-  return <h1>Hello {props.name}!, {props.color}</h1>
+// function Content(props){
+//   console.log(props)
+//   return <h1>Hello {props.name}!, {props.color}</h1>
+// }
+
+function formatName(firstname, surname) {
+  return firstname + " " + surname;
 }
 
-export default Content;
+// export default Content;
+export {formatName}
 
 
 

@@ -1,5 +1,5 @@
 import Header from './Header';
-import Content from './Content';
+import Content, { formatName } from './Content';
 import Footer from './Footer';
 import React, { useState, useEffect } from 'react';
 
@@ -22,6 +22,8 @@ function App() {
   // }
 
   // console.log(counter)
+      
+  const result = <p><b>{formatName("Krishna", "Arjun")}</b></p>;
   return (
     // <div className="App">
       
@@ -40,7 +42,9 @@ function App() {
       <button onClick={updateState}>Click Me</button> <br />
       <button onClick={updateData}>Update Data</button> */}
 
-      <Content name="Krishna" color="blue"/>
+      {/* <Content name="Krishna" color="blue"/> */}
+      {/* <p>{formatName("Krishna", "Arjun")}</p> */}
+      {result}
     </>
     
   );
