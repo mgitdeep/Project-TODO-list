@@ -1,10 +1,15 @@
-import Btn from "./Btn";
+import { darkMode } from "./Btn";
+// import Btn from "./Btn";
 
 function App() {
   return (
-    <>
-      <Btn />
-    </>
+    // <>
+    //   <Btn />
+    // </>
+    <div>
+      {/* <darkMode /> */}
+      {darkMode()}
+    </div>
   )
 }
 

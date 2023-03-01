@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Btn () {
+// function Btn() {
 
     // function handleClick() {
     //     console.log("Someone clicked!")
@@ -11,12 +11,31 @@ function Btn () {
     // return (
     //     <button onClick={handleClick}>Click ME</button>
     // )
-    const handleMouse = () => {
-        console.log("Mouse overrr")
+    // const handleMouse = () => {
+    //     console.log("Mouse overrr")
+    // }
+    // return (
+    //     <button onMouseOver={handleMouse}>Click ME</button>
+    // )
+    
+// }
+
+function darkMode() {
+    let darkModeOn = false;
+    const darkMode = "Dark Mode is ON";
+    const lightMode = "Light mode is ON"
+
+    function handleClick() {
+        console.log("Someone clicked!")
     }
+
     return (
-        <button onMouseOver={handleMouse}>Click ME</button>
+        <>
+            {darkModeOn ? darkMode : lightMode} <br />
+            <button onClick={handleClick}>Click me babe</button>
+        </>
     )
 }
 
-export default Btn
+// export default Btn
+export {darkMode}
