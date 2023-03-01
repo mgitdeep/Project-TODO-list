@@ -1,4 +1,5 @@
-import { darkMode } from "./Btn";
+import { InputComponent } from "./Btn";
+// import { Darkmode } from "./Btn";
 // import Btn from "./Btn";
 
 function App() {
@@ -6,9 +7,13 @@ function App() {
     // <>
     //   <Btn />
     // </>
+    // <div>
+    //   {/* <darkMode /> */}
+    //   {Darkmode()}
+    // </div>
+
     <div>
-      {/* <darkMode /> */}
-      {darkMode()}
+      {InputComponent()}
     </div>
   )
 }

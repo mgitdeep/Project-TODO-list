@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // function Btn() {
 
@@ -20,22 +20,53 @@ import React from 'react'
     
 // }
 
-function darkMode() {
-    let darkModeOn = false;
-    const darkMode = "Dark Mode is ON";
-    const lightMode = "Light mode is ON"
 
-    function handleClick() {
-        console.log("Someone clicked!")
-    }
+// Exercise 2
 
-    return (
-        <>
-            {darkModeOn ? darkMode : lightMode} <br />
-            <button onClick={handleClick}>Click me babe</button>
-        </>
-    )
+// function Darkmode() {
+
+//     const [ x, y ] = useState(false);
+//     let darkModeOn = false;
+//     const darkMode = <h1>Dark Mode is ON</h1>
+//     const lightMode = <h1>Light mode is ON</h1>
+//     console.log(darkModeOn);
+
+//     function handleClick() {
+//         // darkModeOn = !darkModeOn;
+//         // console.log("Someone clicked!")
+//         y(darkModeOn = !darkModeOn);
+//         console.log(darkModeOn)
+//     }
+
+//     return (
+//         <>
+//             {x ? darkMode : lightMode} <br />
+//             <button onClick={handleClick}>Click me babe</button>
+//         </>
+//     )
+// }
+
+// // export default Btn
+// export {Darkmode}
+
+// Exercise 3
+
+function InputComponent() { 
+  const [inputText, setText] = useState('hello'); 
+
+  function handleChange(e) { 
+    setText(e.target.value); 
+  } 
+
+  return ( 
+    <> 
+      <input value={inputText} onChange={handleChange} /> 
+      <p>You typed: {inputText}</p> 
+      <button onClick={() => setText('hello')}> 
+        Reset 
+      </button> 
+    </> 
+  ); 
 }
 
-// export default Btn
-export {darkMode}
+export {InputComponent}
