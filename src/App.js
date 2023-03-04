@@ -1,21 +1,16 @@
-import { InputComponent } from "./Btn";
-// import { Darkmode } from "./Btn";
-// import Btn from "./Btn";
+import Header from './Header';
+import Content from './Content';
+import Footer from './Footer';
 
 function App() {
-  return (
-    // <>
-    //   <Btn />
-    // </>
-    // <div>
-    //   {/* <darkMode /> */}
-    //   {Darkmode()}
-    // </div>
 
-    <div>
-      {InputComponent()}
+  return (
+    <div className="App">
+      <Header />
+      <Content />
+      <Footer />
     </div>
-  )
+  );
 }
 
 export default App;
