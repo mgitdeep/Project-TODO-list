@@ -1,16 +1,16 @@
-import Header from './Header';
-import Content from './Content';
-import Footer from './Footer';
+// import Header from './Header';
+// import Content from './Content';
+// import Footer from './Footer';
+import MultipleInputs from "./components/forms/MultipleInputs"
+import './App.css'
 
 function App() {
 
   return (
-    <div className="App">
-      <Header />
-      <Content />
-      <Footer />
-    </div>
+    <>
+      <MultipleInputs />
+    </>
   );
 }
 
-export default App;
+export default App
