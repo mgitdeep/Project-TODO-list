@@ -1,16 +1,10 @@
-// import Header from './Header';
-// import Content from './Content';
-// import Footer from './Footer';
-import MultipleInputs from "./components/forms/MultipleInputs"
-import './App.css'
 
-function App() {
+import React from 'react'
 
+const App = () => {
   return (
-    <>
-      <MultipleInputs />
-    </>
-  );
+    <div>Welcome to Mondeep's empire 🔥</div>
+  )
 }
 
 export default App
