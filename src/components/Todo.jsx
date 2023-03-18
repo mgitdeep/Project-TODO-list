@@ -27,6 +27,20 @@ const Todo = () => {
       setitems([...items, userInput])
     }
     // setitem1(userInput)                  It'll also work but you can't show the alert
+
+    // Clear the item once hit the + button
+    // let emptyText = userInput.slice(-1, 0)
+    // setUserInput(emptyText)
+    // OR
+    setUserInput('')
+  }
+
+  const deleteItem = (curElm) => {
+    // console.log(index)
+    const updatedItem = items.filter((curElmm) => {
+      return curElmm !== curElm
+    });
+    setitems(updatedItem)
   }
 
 
@@ -54,12 +68,13 @@ const Todo = () => {
             {/* Show our items here */}
             <div className="showItems">
               {items.map( (curElm, index) => {
+                // let x = index;
                 return (
                   <div className="eachItem" key={index}>
                     <h3>{curElm}</h3>
                     <div className="todo-btn">
                     <i className="fa fa-edit"></i>
-                    <i className="fa fa-trash-alt"></i>
+                    <i className="fa fa-trash-alt" onClick={() => deleteItem(curElm)}></i>
                     </div>
                 </div>
                 )
