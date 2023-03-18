@@ -5,7 +5,7 @@ const Todo = () => {
 
   const [userInput, setUserInput] = useState('')
   // const [item1, setitem1] = useState('')         // It can be used to add items one by one - write, click + - repeat
-  const [item1, setitem1] = useState([])
+  const [items, setitems] = useState([])
 
   const handleOnchange = (e) => {
     // console.log('user input')
@@ -24,7 +24,7 @@ const Todo = () => {
     } else {
       // setitem1(userInput)
       // setitem1(...item1, userInput)      Square bracs required to hold the previous data
-      setitem1([...item1, userInput])
+      setitems([...items, userInput])
     }
     // setitem1(userInput)                  It'll also work but you can't show the alert
   }
@@ -53,13 +53,19 @@ const Todo = () => {
 
             {/* Show our items here */}
             <div className="showItems">
-              <div className="eachItem">
-                  <h3>{item1}</h3>
-                  <div className="todo-btn">
-                  <i className="fa fa-edit"></i>
-                  <i className="fa fa-trash-alt"></i>
-                  </div>
-              </div>
+              {items.map( (curElm, index) => {
+                return (
+                  <div className="eachItem" key={index}>
+                    <h3>{curElm}</h3>
+                    <div className="todo-btn">
+                    <i className="fa fa-edit"></i>
+                    <i className="fa fa-trash-alt"></i>
+                    </div>
+                </div>
+                )
+              })}
+              
+
             </div>
 
             <div className="showItems">
