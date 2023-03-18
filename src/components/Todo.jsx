@@ -43,6 +43,14 @@ const Todo = () => {
     setitems(updatedItem)
   }
 
+  const removeAll = () => {
+    // let clearAll = items.slice(-1, 0)
+    // setitems(clearAll)
+    // OR
+    setitems([])
+  }
+  // console.log(items[1])
+  // console.log('remove all')
 
 
   return (
@@ -84,7 +92,7 @@ const Todo = () => {
             </div>
 
             <div className="showItems">
-              <button className="btn effect04" data-sm-link-text = "Remove All">
+              <button className="btn effect04" data-sm-link-text = "Remove All" onClick={removeAll}>
                 <span>Check List</span>
               </button>
             </div>
