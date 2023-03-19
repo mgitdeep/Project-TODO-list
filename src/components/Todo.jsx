@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/Todo.css";
+
+// Getting the Local Storage data
+const getLocalData = () => {
+  const allData = localStorage.getItem("MyTodoList")
+
+  if (allData) {
+    return JSON.parse(allData)
+  } else {
+    return []
+  }
+}
 
 const Todo = () => {
 
   const [userInput, setUserInput] = useState('')
-  // const [item1, setitem1] = useState('')         // It can be used to add items one by one - write, click + - repeat
-  const [items, setitems] = useState([])
+  // const [item1, setitem1] = useState('')               It can be used to add items one by one - write, click + - repeat
+  const [items, setitems] = useState(getLocalData())
+
+  // console.log(typeof(items))                           Note that "items" is an Object which is holding all the data
 
   const handleOnchange = (e) => {
     setUserInput(e.target.value)
@@ -27,9 +40,15 @@ const Todo = () => {
       setitems([...items, userInput])
 
       // Adding Local Storage
+
       // localStorage.setItem("newItems", items)
       // localStorage.setItem("newItems", [...items])
-      localStorage.setItem("newItems", [...items, userInput])
+      // localStorage.setItem("newItems", [...items, userInput])
+      // localStorage.setItem("newItems", JSON.stringify([...items, userInput]))
+      // useEffect(() => {
+      //   localStorage.setItem("MyTodoList", JSON.stringify(items))                    - cannot define useEffect inside an ordinary function
+      // }, [])
+      
       
     }
     // setitem1(userInput)                  It'll also work but you can't show the alert
@@ -40,6 +59,9 @@ const Todo = () => {
     // OR
     setUserInput('')
   }
+  useEffect(() => {
+        localStorage.setItem("MyTodoList", JSON.stringify(items))                    
+      }, [items])
 
   const deleteItem = (curElm) => {
     // console.log(index)
