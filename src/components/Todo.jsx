@@ -8,15 +8,15 @@ const Todo = () => {
   const [items, setitems] = useState([])
 
   const handleOnchange = (e) => {
-    // console.log('user input')
     setUserInput(e.target.value)
-    // console.log(text)
   }
   // let i1
   // const addItem = () => {
   //   console.log('item added')              Horrible code - never work! - the 1st attempt
   //   i1 = setitem1(item1)
   // }
+
+  // when user clicks on + icon
 
   const addItem = () => {
     if (!userInput) {
@@ -25,6 +25,12 @@ const Todo = () => {
       // setitem1(userInput)
       // setitem1(...item1, userInput)      Square bracs required to hold the previous data
       setitems([...items, userInput])
+
+      // Adding Local Storage
+      // localStorage.setItem("newItems", items)
+      // localStorage.setItem("newItems", [...items])
+      localStorage.setItem("newItems", [...items, userInput])
+      
     }
     // setitem1(userInput)                  It'll also work but you can't show the alert
 
