@@ -88,6 +88,7 @@ const Todo = () => {
     const updatedItem = items.filter((curElmm) => {
       return curElmm !== curElm
     });
+    console.log(updatedItem)
     setItems(updatedItem)
   }
 
@@ -112,7 +113,7 @@ const Todo = () => {
       // console.log(curElmm)
       return curElmm === curElm
     });
-    // console.log(editThisItem)
+    console.log(editThisItem)
     setUserInput(editThisItem.name) 
     setToggleIcon(true)
     setEditedItem(curElm)
@@ -126,7 +127,7 @@ const Todo = () => {
         <div className="child-div">
             <figure>
                 <img src="./images/todo.png" alt="todo" />
-                <figcaption>Add your list here 🔰</figcaption>
+                <figcaption>Add your list here ✌</figcaption>
             </figure>
             <div className="addItems">
                 <input 
