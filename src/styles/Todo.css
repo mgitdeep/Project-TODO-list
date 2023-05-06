@@ -236,7 +236,7 @@ input:focus {
 @media (max-width: 300px) {
   .main-div {
     min-height: 450vh;
-    min-width: 390px;
+    min-width: 420px;
   }
 }
 
