@@ -19,10 +19,53 @@ const Todo = () => {
   const [items, setItems] = useState(getLocalData())
   const [editedItem, setEditedItem] = useState('')
   const [toggleIcon, setToggleIcon] = useState(false)
+  // const [keyPress, setKeyPress] = useState('')
 
  
   const handleOnchange = (e) => {
     setUserInput(e.target.value)
+  }
+
+  // useEffect(() => {
+  //   document.addEventListener('keydown', handleKeyDown, true)        // No need of using useEffect
+  // })
+
+
+
+  // Add a item only when user hits ENTER
+  const handleKeyDown = (e) => {
+  
+    if (e.key === "Enter" && !userInput) {
+      alert('Please add an item!')
+
+    } 
+    
+    else if (e.key === "Enter" && userInput && toggleIcon) {
+      setItems(items.map((elm) => {
+        if ( elm.id === editedItem.id ) {
+          return {...elm, name: userInput}
+        }
+        return elm
+      }))
+      setToggleIcon(false)
+      setUserInput('')
+    }
+
+    else if (e.key === "Enter" && userInput) {
+      const myNewInputData = {
+        id: new Date().getTime().toString(),
+        name: e.target.value
+      }
+      setItems([...items, myNewInputData])
+      setToggleIcon(false)
+
+      // clear the writing bar after adding item in the list
+      setUserInput('')
+    }
+    // else {
+    //   // setUserInput(e.target.value)        Not required this else, handled by handleOnChange function
+    // }
+    // setUserInput('')
   }
 
   const addItem = () => {
@@ -30,7 +73,7 @@ const Todo = () => {
       alert('Please add an item!')
     } 
 
-    // this condition is only for the last editing part
+    // this condition is only for to add the last editing part
     else if(userInput && toggleIcon) {
       setItems(items.map((elm) => {
         if ( elm.id === editedItem.id ) {
@@ -40,6 +83,8 @@ const Todo = () => {
       }))
       setToggleIcon(false)
     } 
+    
+    // Here brand new items are added
     else {
       const myNewInputData = {
         id: new Date().getTime().toString(),
@@ -70,19 +115,30 @@ const Todo = () => {
   // Remove all items
   const removeAll = () => {
     console.log("By © github.com/mgitdeep")
+    // console.log(items)
+
+    // used my brain 99% !!
+    if (!items[0]) {
+      alert("No items to remove!")
+    }
     setItems([])
+    setUserInput('')
   }
  
 
   // Edit the item
   const editItem = (curElm) => {
+    // console.log(curElm)
     const editThisItem = items.find((curElmm) => {
-      
+      // console.log(curElm)
+      // console.log(editThisItem)
       return curElmm === curElm
     });
+    // console.log(editThisItem)
     setUserInput(editThisItem.name) 
     setToggleIcon(true)
     setEditedItem(curElm)
+    // console.log(curElm)
   }
 
 
@@ -101,9 +157,11 @@ const Todo = () => {
                 placeholder="✍ Add Item"
                 value={userInput}
                 onChange={handleOnchange}
+                onKeyDown={handleKeyDown}
+                
                 />
 
-                { toggleIcon ? <i className="fa fa-edit" onClick={addItem}></i> : <i className="fa fa-plus" onClick={addItem}></i>}
+                { toggleIcon ? <i className="fa fa-edit" onClick={addItem} ></i> : <i className="fa fa-plus" onClick={addItem} ></i>}
                 
             </div>
 

@@ -13,6 +13,7 @@ html {
 
 .main-div {
   min-height: 100vh;
+  /* width: 100%; */
   background: #060822;
   display: flex;
   justify-content: center;
@@ -112,7 +113,7 @@ input:focus {
 .eachItem {
   background: #fff;
   padding: 1.2rem 1rem;
-  padding-right: 2rem;
+  padding-right: 3rem;
   border-radius: 1.5rem;
   margin-bottom: 0.7rem;
   margin-left: 1rem;
@@ -131,6 +132,7 @@ input:focus {
 
 .showItems .eachItem h3 {
   padding-left: 1rem;
+  padding-right: 5rem;
   font-size: 1.6rem;
   color: #fff;
 }
@@ -229,4 +231,18 @@ input:focus {
   letter-spacing: 0.05em;
   -webkit-transform: translateY(0) scale(1, 1);
   transform: translateY(0) scale(1, 1);
+}
+
+@media (max-width: 300px) {
+  .main-div {
+    min-height: 450vh;
+    min-width: 390px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 500px){
+  .main-div {
+    min-height: 170vh;
+    min-width: 500px;
+  }
 }
